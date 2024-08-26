@@ -25,7 +25,15 @@ public final class Main extends JavaPlugin {
         shardManager.addEventListener(
                 new onMessageDiscord()
         );
-
+    }
+        public static void main(String[] args) {
+            try {
+                Main bot = new Main();
+            } catch (LoginException e) {
+                System.out.println("Bot token invalid!");
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
 
     }
     @Override
@@ -40,3 +48,4 @@ public final class Main extends JavaPlugin {
         Bukkit.getLogger().info("closing bridge");
     }
 }
+

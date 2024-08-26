@@ -8,9 +8,12 @@ import org.jetbrains.annotations.NotNull;
 public class onMessageDiscord extends ListenerAdapter {
     @Override
     public void onMessageReceived(@NotNull MessageReceivedEvent event) {
-        if (!event.getAuthor().isBot()) {
-          String message = event.getMessage().getContentRaw();
-          Bukkit.broadcastMessage(message);
+        if (event.getChannel().equals(event.getGuild().getTextChannelById("1275517417681977397"))) {
+            if (!event.getAuthor().isBot()) {
+                String message = event.getMessage().getContentRaw();
+                Bukkit.broadcastMessage(message);
+
+            }
         }
     }
 }
